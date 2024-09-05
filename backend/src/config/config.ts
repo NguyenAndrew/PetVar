@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import configMap from "./configMap";
 import ConfigTemplate from "./configTemplate";
 
