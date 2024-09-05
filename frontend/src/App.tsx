@@ -5,11 +5,15 @@ import axios from "axios";
 
 function App(): JSX.Element {
   const [health, setHealth] = useState("");
+  const [pocketbaseMessage, setPocketbaseMessage] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get("./health");
       setHealth(result.data);
+
+      const pocketbaseResult = await axios.get("./pocketbase-message");
+      setPocketbaseMessage(pocketbaseResult.data);
     }
 
     fetchData();
@@ -31,6 +35,8 @@ function App(): JSX.Element {
         <br />
         <br />
         The health of the backend: {health ? health : "Backend is Offline"}
+        <br />
+        The message from Pocketbase: {pocketbaseMessage ? pocketbaseMessage : "N/A"}
       </header>
     </div>
   );
