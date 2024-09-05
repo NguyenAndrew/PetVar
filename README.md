@@ -6,7 +6,7 @@ PetVar is the fastest way to spin up a Full Stack application (React + Node + Po
 ## Table of Contents
 * Prequisites
 * Installation Steps - Local
-* Running Local - 
+* Running - Local
 
 ## Prerequisites
 
@@ -25,6 +25,15 @@ PetVar is the fastest way to spin up a Full Stack application (React + Node + Po
     * Note: Running this command will also setup your initial collections and data
 6. Navigate to the Admin UI and setup your admin user
     * The admin UI link will display in your terminal, after running the above serve command
+7. Navigate to the `users` collection and create a new user
+    * This user will be used by your backend server, to connect to pocketbase
+8. In your backend directory, create a `.env` with the following structure:
+```
+POCKETBASE_USER=UsersUsernameFromThePreviousStepHere
+POCKERBASER_PASSWORD=UsersPasswordFromThePreviousStepHere
+```
+9. Terminate running Pocketbase (the command that was run on step 5)
+10. Your install is complete. Follow the 'Running - Local' steps below!
 
 ## Running - Local
 
@@ -35,6 +44,12 @@ PetVar is the fastest way to spin up a Full Stack application (React + Node + Po
       * `start:windows`, `start:linux`, and `start:mac` are also available
       * You can update the `start` command in this package.json to match your systems OS
 5. Ready to Code!
+     * To view your frontend website, on your browser go to: `http://localhost:5173`
+     * To call your backend server, use your API client on this URL: `http://localhost:3031`
+         * Example: GET `http://localhost:3031/health`
+     * To view your database and storage, use these URLS:
+        * Admin UI: `http://127.0.0.1:8090/_/`
+        * REST API: `http://localhost:8090/api/`
 
 ## Running - Cloud
 Work in Progress
