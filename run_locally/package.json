@@ -6,9 +6,9 @@
   "scripts": {
     "postinstall": "concurrently \"cd ../backend && npm install\" \"cd ../frontend && npm install\"",
     "start": "npm run start:mac",
-    "start:windows": "concurrently \"cd ../back_end && npm run start:local:windows\" \"cd ../frontend && npm run dev\"",
-    "start:linux": "concurrently \"cd ../back_end && npm run start:local:linux\" \"cd ../frontend && npm run dev\"",
-    "start:mac": "concurrently \"cd ../back_end && npm run start:local:mac\" \"cd ../frontend && npm run dev\""
+    "start:windows": "concurrently \"cd ../database_and_storage && ./pocketbase serve\" \"cd ../backend && npm run start:local:windows\" \"cd ../frontend && npm run dev\"",
+    "start:linux": "concurrently \"cd ../database_and_storage && ./pocketbase serve\" \"cd ../backend && npm run start:local:linux\" \"cd ../frontend && npm run dev\"",
+    "start:mac": "concurrently \"cd ../database_and_storage && ./pocketbase serve\" \"cd ../backend && npm run start:local:mac\" \"cd ../frontend && npm run dev\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
