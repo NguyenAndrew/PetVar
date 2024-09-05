@@ -27,7 +27,7 @@ app.post("/axios-test", (req: Request, res: Response) => {
 if (config.serveFrontEnd) {
   console.log("Server is running on the cloud");
 
-  const frontEndBuildFolder = "front_end/dist";
+  const frontEndBuildFolder = "frontend/dist";
 
   app.use(
     express.static(path.join(__dirname, "../../..", frontEndBuildFolder)),
