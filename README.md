@@ -3,6 +3,10 @@ PetVar === Pocketbase Express Typescript Vite Axios React
 
 PetVar is the fastest way to spin up a Full Stack application (React + Node + PocketBase). Evolution and based off of the Penjar stack. 
 
+## Architecture
+
+![Architecture](project_documentation/architecture_images/architecture.drawio.png)
+
 ## Table of Contents
 * Prequisites
 * Installation Steps - Local
