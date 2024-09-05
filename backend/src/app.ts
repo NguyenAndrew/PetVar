@@ -30,12 +30,12 @@ if (config.serveFrontEnd) {
   const frontEndBuildFolder = "front_end/dist";
 
   app.use(
-    express.static(path.join(__dirname, "../../..", frontEndBuildFolder))
+    express.static(path.join(__dirname, "../../..", frontEndBuildFolder)),
   );
 
   app.get("/", (_req: Request, res: Response) => {
     res.sendFile(
-      path.join(__dirname, "../../..", frontEndBuildFolder, "index.html")
+      path.join(__dirname, "../../..", frontEndBuildFolder, "index.html"),
     );
   });
 } else {

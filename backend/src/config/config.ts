@@ -16,7 +16,7 @@ const getConfig = (): ConfigTemplate => {
     !Object.prototype.hasOwnProperty.call(configMap, processEnvPropertyValue)
   ) {
     throw new Error(
-      `${processEnvPropertyValue} must exist within configMap.ts`
+      `${processEnvPropertyValue} must exist within configMap.ts`,
     );
   }
 
