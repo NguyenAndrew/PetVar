@@ -1,5 +1,5 @@
 import { app, port } from "./app.js";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 require("source-map-support").install();
 
 app.listen(port, () => {

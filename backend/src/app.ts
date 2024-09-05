@@ -1,7 +1,7 @@
 import axios from "axios";
 import path from "path";
 import express, { Request, Response } from "express";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const helmet = require("helmet");
 import host from "./host/host";
 import getConfig from "./config/config";

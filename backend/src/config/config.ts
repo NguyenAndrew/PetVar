@@ -27,7 +27,7 @@ const getConfig = (): ConfigTemplate => {
 
   // Require (CommonJS) instead of dynamic import (ES6) used to avoid having to support top-level await. Latest LTS version of node was returning errors on features that came when compiling TypeScript with newer ECMAScript.
   // Default used due to using CommonJS syntax along with ES6 syntax.
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const config: ConfigTemplate = require(importName).default;
 
   return config;
