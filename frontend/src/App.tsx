@@ -1,25 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
+import { useQuery } from '@tanstack/react-query'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [health, setHealth] = useState("");
-  const [pocketbaseMessage, setPocketbaseMessage] = useState("");
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await axios.get("./health");
-      setHealth(result.data);
-
-      const pocketbaseResult = await axios.get("./pocketbase-message");
-      setPocketbaseMessage(pocketbaseResult.data);
+  const healthResult = useQuery(
+    { 
+      queryKey: ['health'], 
+      queryFn: async () => {
+        const result = await axios.get("./health");
+        return result.data;
+      }
     }
+  )
+  const pocketbaseMessageResult = useQuery(
+    { 
+      queryKey: ['pocketbaseMessage'], 
+      queryFn: async () => {
+        const result = await axios.get("./pocketbase-message");
+        return result.data;
+      }
+    }
+  )
 
-    fetchData();
-  }, []);
+  if (healthResult.isLoading || pocketbaseMessageResult.isLoading) {
+    return <>Loading...</>
+  }
 
   return (
     <>
@@ -42,10 +51,10 @@ function App() {
       </div>
       <div className="card">
         <p>
-          The health of the backend: {health ? health : "Backend is Offline"}
+          The health of the backend: {healthResult.data ? healthResult.data : "Backend is Offline"}
         </p>
         <p>
-          The message from Pocketbase: {pocketbaseMessage ? pocketbaseMessage : "N/A"}
+          The message from Pocketbase: {pocketbaseMessageResult.data ? pocketbaseMessageResult.data : "N/A"}
         </p>
       </div>
       <p className="read-the-docs">
