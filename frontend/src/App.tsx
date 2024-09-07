@@ -22,7 +22,8 @@ function App() {
       queryFn: async () => {
         const result = await axios.get("./pocketbase-message");
         return result.data;
-      }
+      },
+      refetchInterval: 2500
     }
   )
 
