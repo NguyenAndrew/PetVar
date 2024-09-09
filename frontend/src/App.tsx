@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
+import { Button } from '@/components/ui/button'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,19 +34,23 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="flex flex-row justify-center items-center">
+        <div>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+        </div>
+        <div>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
